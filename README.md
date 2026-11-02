@@ -42,6 +42,10 @@ The endpoint is already configured: `https://formspree.io/f/myeebnjr` (in the fo
 
 To point it at a different form later, create the form in Formspree and replace the `action` URL. The form includes a `_gotcha` honeypot field for spam and works without JS via a normal POST.
 
+## Architecture
+
+Formulario, dominio, DNS y flujo de datos: [docs/architecture.md](docs/architecture.md).
+
 ## Content sources
 
 - Photos of Lucía: from her Instagram [@luciamartinpb](https://www.instagram.com/luciamartinpb/), credited in the footer. Assumes Lucía has approved their use on the site.
