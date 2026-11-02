@@ -32,5 +32,5 @@ The site can be deployed with **GitHub Pages**: in the repository go to *Setting
 ## Content sources
 
 - Photos of Lucía: Marie-Lan Nguyen / [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Luc%C3%ADa_Mart%C3%ADn-Portugu%C3%A9s), licensed [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). The credit line in the footer is required by the license.
-- Results and upcoming competitions: [FIE](https://fie.org/athletes/10145) and [Wikipedia](https://es.wikipedia.org/wiki/Luc%C3%ADa_Mart%C3%ADn-Portugu%C3%A9s). The competitions list is static and needs manual updates.
+- Site copy is in Spanish. Results and upcoming competitions: [FIE](https://fie.org/athletes/10145) and [Wikipedia](https://es.wikipedia.org/wiki/Luc%C3%ADa_Mart%C3%ADn-Portugu%C3%A9s). The competitions list is static and needs manual updates.
 - The mentoring form in `index.html` is intentionally inactive (no `action`, submit button disabled).

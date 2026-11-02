@@ -354,17 +354,6 @@ h3 {
   margin: 0 0 2rem;
 }
 
-.section-intro span,
-.es {
-  display: block;
-  font-style: italic;
-  color: var(--color-muted);
-}
-
-.section-accent .section-intro span {
-  color: rgba(255, 255, 255, 0.85);
-}
-
 .lead {
   font-size: 1.2rem;
 }
