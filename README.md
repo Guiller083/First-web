@@ -31,6 +31,7 @@ The site can be deployed with **GitHub Pages**: in the repository go to *Setting
 
 ## Content sources
 
-- Photos of Lucía: Marie-Lan Nguyen / [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Luc%C3%ADa_Mart%C3%ADn-Portugu%C3%A9s), licensed [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). The credit line in the footer is required by the license.
-- Site copy is in Spanish. Results and upcoming competitions: [FIE](https://fie.org/athletes/10145) and [Wikipedia](https://es.wikipedia.org/wiki/Luc%C3%ADa_Mart%C3%ADn-Portugu%C3%A9s). The competitions list is static and needs manual updates.
+- Photos of Lucía: from her Instagram [@luciamartinpb](https://www.instagram.com/luciamartinpb/), credited in the footer. Assumes Lucía has approved their use on the site.
+- Site copy is in Spanish. Results and upcoming competitions: [FIE](https://fie.org/athletes/10145) and [Wikipedia](https://es.wikipedia.org/wiki/Luc%C3%ADa_Mart%C3%ADn-Portugu%C3%A9s). The competitions list and the ranking chart (inline SVG, percentile = 100 × (1 − (rank − 1) / ranked fencers), from FIE season rankings) are static and need manual updates.
+- About text and quotes: interviews in ¡HOLA!, El Mundo and ABC (2024), linked on the page.
 - The mentoring form in `index.html` is intentionally inactive (no `action`, submit button disabled).

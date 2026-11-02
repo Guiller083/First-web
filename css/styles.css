@@ -701,3 +701,137 @@ h3 {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* Hero motto */
+.hero-motto {
+  margin: -0.5rem 0 1.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.15rem;
+}
+
+.tile .tile-img-alt {
+  object-position: center 30%;
+}
+
+/* Quotes */
+.section-quotes {
+  background: var(--color-taupe-dark);
+  color: #fff;
+}
+
+.quotes {
+  display: grid;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quotes blockquote {
+  margin: 0;
+}
+
+.quotes blockquote p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.45;
+}
+
+.quote-source {
+  margin: 0.75rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* Ranking chart */
+.ranking {
+  margin-top: 3rem;
+}
+
+.ranking h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.rank-figure {
+  margin: 1.5rem 0 1rem;
+  padding: 1rem;
+  background: #fff;
+}
+
+.rank-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rank-chart .grid {
+  stroke: var(--color-bg-soft);
+  stroke-width: 1;
+}
+
+.rank-chart .axis {
+  font-size: 11px;
+  fill: #666;
+}
+
+.rank-chart .line {
+  fill: none;
+  stroke: var(--color-taupe-dark);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.rank-chart .dot {
+  fill: var(--color-taupe-dark);
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+
+.rank-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.rank-details summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.rank-table {
+  width: 100%;
+  max-width: 32rem;
+  margin-top: 1rem;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.9rem;
+}
+
+.rank-table caption {
+  text-align: left;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.rank-table th,
+.rank-table td {
+  padding: 0.4rem 0.75rem;
+  border-bottom: 1px solid var(--color-bg-soft);
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .quotes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
