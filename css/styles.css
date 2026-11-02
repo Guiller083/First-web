@@ -7,7 +7,7 @@
   --color-text: #1b1b1b;
   --color-muted: #5f5853;
   --color-border: #ddd3cc;
-  --font-sans: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font-sans: "Montserrat", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
   --container: 1120px;
   --space: 1.25rem;
   --header-height: 64px;
@@ -104,7 +104,7 @@ h3 {
 }
 
 .brand {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-sans);
   font-style: italic;
   font-size: 1.6rem;
   letter-spacing: 0.04em;
@@ -705,7 +705,7 @@ h3 {
 /* Hero motto */
 .hero-motto {
   margin: -0.5rem 0 1.5rem;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-sans);
   font-style: italic;
   font-size: 1.15rem;
 }
@@ -734,7 +734,7 @@ h3 {
 
 .quotes blockquote p {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-sans);
   font-style: italic;
   font-size: 1.3rem;
   line-height: 1.45;
@@ -834,4 +834,22 @@ h3 {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
   }
+}
+
+/* Sponsor */
+.hero-sponsor {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero-sponsor img {
+  height: 2.4rem;
+  width: auto;
+  display: inline-block;
 }
