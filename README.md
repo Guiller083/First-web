@@ -7,8 +7,9 @@ Internet web page about Lucía Martín-Portugues a professional fencer. The aim 
 .
 ├── index.html       # Landing page
 ├── css/styles.css   # Mobile-first styles
-├── js/main.js       # Minimal JS (mobile nav toggle)
-└── assets/          # Images and other static assets
+├── js/main.js       # Minimal JS (mobile nav toggle, inactive form guard)
+├── favicon.svg
+└── assets/img/      # Photos
 ```
 
 ## Getting started
@@ -27,3 +28,9 @@ This is a plain static site with no build step and no dependencies.
 ## Deployment
 
 The site can be deployed with **GitHub Pages**: in the repository go to *Settings → Pages*, choose *Deploy from a branch*, select `main` and the `/ (root)` folder, and save. The site will be published at `https://<username>.github.io/First-web/`.
+
+## Content sources
+
+- Photos of Lucía: Marie-Lan Nguyen / [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Luc%C3%ADa_Mart%C3%ADn-Portugu%C3%A9s), licensed [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/). The credit line in the footer is required by the license.
+- Results and upcoming competitions: [FIE](https://fie.org/athletes/10145) and [Wikipedia](https://es.wikipedia.org/wiki/Luc%C3%ADa_Mart%C3%ADn-Portugu%C3%A9s). The competitions list is static and needs manual updates.
+- The mentoring form in `index.html` is intentionally inactive (no `action`, submit button disabled).
