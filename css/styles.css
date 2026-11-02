@@ -669,6 +669,15 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .mentoring-form-row {
+    grid-template-columns: 2fr 3fr;
+    align-items: start;
+  }
+
+  .mentoring-img {
+    max-width: none;
+  }
+
   .form-wrap {
     padding: 2.5rem;
   }
@@ -843,9 +852,14 @@ h3 {
   fill: var(--color-taupe-dark);
 }
 
+.mentoring-form-row {
+  display: grid;
+  gap: var(--space);
+}
+
 .mentoring-img {
   display: block;
   width: 100%;
   max-width: 34rem;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto;
 }
