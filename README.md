@@ -7,7 +7,7 @@ Internet web page about Lucía Martín-Portugues a professional fencer. The aim 
 .
 ├── index.html       # Landing page
 ├── css/styles.css   # Mobile-first styles
-├── js/main.js       # Minimal JS (mobile nav toggle, inactive form guard)
+├── js/main.js       # Minimal JS (mobile nav toggle, Formspree form submit)
 ├── favicon.svg
 └── assets/img/      # Photos
 ```
@@ -27,13 +27,26 @@ This is a plain static site with no build step and no dependencies.
 
 ## Deployment
 
-The site can be deployed with **GitHub Pages**: in the repository go to *Settings → Pages*, choose *Deploy from a branch*, select `main` and the `/ (root)` folder, and save. The site will be published at `https://<username>.github.io/First-web/`.
+The site is static, at the repo root, with no build step (a `.nojekyll` file disables Jekyll processing). To publish it on **GitHub Pages**:
+
+1. Go to **Settings → Pages**.
+2. Under *Build and deployment*, choose **Source: Deploy from a branch**.
+3. Select branch **`main`** and folder **`/ (root)`** and save.
+4. After a minute the site is live at **<https://guiller083.github.io/First-web/>**.
+
+## Mentoring form (Formspree)
+
+The contact form in `index.html` posts to **Formspree**, so submissions arrive by email (no backend needed). To activate it:
+
+The endpoint is already configured: `https://formspree.io/f/myeebnjr` (in the form's `action` in `index.html`). Submissions go to the email verified on that Formspree account.
+
+To point it at a different form later, create the form in Formspree and replace the `action` URL. The form includes a `_gotcha` honeypot field for spam and works without JS via a normal POST.
 
 ## Content sources
 
 - Photos of Lucía: from her Instagram [@luciamartinpb](https://www.instagram.com/luciamartinpb/), credited in the footer. Assumes Lucía has approved their use on the site.
 - Site copy is in Spanish. Results and upcoming competitions: [FIE](https://fie.org/athletes/10145) and [Wikipedia](https://es.wikipedia.org/wiki/Luc%C3%ADa_Mart%C3%ADn-Portugu%C3%A9s). The competitions list and the ranking chart (inline SVG, percentile = 100 × (1 − (rank − 1) / ranked fencers), from FIE season rankings) are static and need manual updates.
 - About text and quotes: interviews in ¡HOLA!, El Mundo, ABC and Women's Health (2024), linked on the page.
-- The mentoring form in `index.html` is intentionally inactive (no `action`, submit button disabled).
+- The mentoring form posts to Formspree; see "Mentoring form (Formspree)" for activation.
 
 - Typography: Montserrat (Google Fonts). Sponsor: Iberdrola logo from Lucía's assets.
