@@ -619,6 +619,58 @@ h3 {
   letter-spacing: 0.04em;
 }
 
+
+/* ===== Conoce la esgrima ===== */
+.fencing-grid {
+  display: grid;
+  gap: var(--space);
+  margin-top: 2rem;
+}
+
+.fencing-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.fencing-card h3 {
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1rem;
+  color: var(--color-taupe-dark);
+}
+
+.fencing-card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.fencing-card li {
+  margin: 0.4rem 0;
+}
+
+.fencing-outro {
+  margin-top: 2rem;
+}
+
+/* Footer icons */
+.social-icon,
+.sponsor-icon {
+  height: 2rem;
+  width: auto;
+  display: block;
+}
+
+.sponsor-icon {
+  height: 2.6rem;
+}
+
+.newsletter-note {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 0.9rem;
+}
+
 /* ===== Tablet and up ===== */
 @media (min-width: 768px) {
   .nav-toggle {
@@ -702,6 +754,10 @@ h3 {
 
   .section {
     padding: 5rem 0;
+  }
+
+  .fencing-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
