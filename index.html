@@ -360,8 +360,9 @@
           <img class="mentoring-img" src="assets/img/lucia-mentorias-2.jpg" alt="Lucía Martín-Portugués" width="1280" height="1600" loading="lazy">
           <div class="form-wrap">
           <h3 id="mentoring-form-title">Solicita una mentoría</h3>
-          <!-- Form submission is intentionally not wired up yet (no action/endpoint). -->
-          <form class="contact-form" id="mentoring-form" aria-labelledby="mentoring-form-title" data-disabled="true" novalidate>
+          <!-- Los envíos llegan al email de Lucía vía Formspree (form myeebnjr). -->
+          <form class="contact-form" id="mentoring-form" aria-labelledby="mentoring-form-title"
+                action="https://formspree.io/f/myeebnjr" method="POST">
             <div class="form-row">
               <label for="mf-name">Nombre</label>
               <input id="mf-name" name="name" type="text" autocomplete="name" required>
@@ -380,6 +381,11 @@
                 <option value="other">Otro</option>
               </select>
             </div>
+            <!-- Honeypot anti-spam: oculto para usuarios, lo rellenan los bots -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="mf-gotcha">No rellenar</label>
+              <input id="mf-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+            </div>
             <div class="form-row form-row-full">
               <label for="mf-message">¿En qué te puede ayudar Lucía?</label>
               <textarea id="mf-message" name="message" rows="5" required></textarea>
@@ -389,8 +395,8 @@
               <label for="mf-consent">Acepto ser contactado/a en relación con mi solicitud.</label>
             </div>
             <div class="form-row form-row-full">
-              <button class="button" type="submit" disabled aria-describedby="mf-status">Enviar</button>
-              <p id="mf-status" class="form-status" role="status">El formulario aún no está activo.</p>
+              <button class="button" type="submit" aria-describedby="mf-status">Enviar</button>
+              <p id="mf-status" class="form-status" role="status"></p>
             </div>
           </form>
           </div>

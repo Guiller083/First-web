@@ -505,6 +505,15 @@ h3 {
   letter-spacing: 0.04em;
 }
 
+/* Honeypot field, invisible to users */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .contact-form {
   display: grid;
   gap: 1rem;
@@ -734,7 +743,16 @@ h3 {
     padding: 2.5rem;
   }
 
-  .contact-form {
+  /* Honeypot field, invisible to users */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form {
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem 1.5rem;
   }

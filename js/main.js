@@ -23,11 +23,31 @@
     });
   }
 
-  // Mentoring form: not active yet, never submit
+  // Mentoring form: submit to Formspree via fetch, with a normal POST as fallback
+  // (without JS the form still submits natively to the same endpoint).
   var form = document.getElementById("mentoring-form");
-  if (form && form.dataset.disabled === "true") {
+  var status = document.getElementById("mf-status");
+  if (form && status) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
+      if (!form.reportValidity()) {
+        return;
+      }
+      status.textContent = "Enviando…";
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      }).then(function (response) {
+        if (response.ok) {
+          status.textContent = "¡Gracias! Tu solicitud se ha enviado.";
+          form.reset();
+        } else {
+          status.textContent = "No se pudo enviar. Inténtalo de nuevo o escribe a luciamartinportugues@gmail.com.";
+        }
+      }).catch(function () {
+        status.textContent = "No se pudo enviar. Inténtalo de nuevo o escribe a luciamartinportugues@gmail.com.";
+      });
     });
   }
 
