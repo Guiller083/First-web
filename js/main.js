@@ -5,19 +5,29 @@
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("site-nav");
 
+  function setNav(open) {
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  }
+
   if (toggle && nav) {
     toggle.addEventListener("click", function () {
-      var isOpen = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
-      toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      setNav(!nav.classList.contains("is-open"));
     });
 
     nav.addEventListener("click", function (event) {
       if (event.target.tagName === "A" && nav.classList.contains("is-open")) {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open menu");
+        setNav(false);
       }
+    });
+  }
+
+  // Mentoring form: not active yet, never submit
+  var form = document.getElementById("mentoring-form");
+  if (form && form.dataset.disabled === "true") {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
     });
   }
 
