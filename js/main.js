@@ -43,10 +43,10 @@
           status.textContent = "¡Gracias! Tu solicitud se ha enviado.";
           form.reset();
         } else {
-          status.textContent = "No se pudo enviar. Inténtalo de nuevo o escribe a luciamartinportugues@gmail.com.";
+          status.textContent = "No se pudo enviar. Inténtalo de nuevo o escribe a luciaesgrima@gmail.com.";
         }
       }).catch(function () {
-        status.textContent = "No se pudo enviar. Inténtalo de nuevo o escribe a luciamartinportugues@gmail.com.";
+        status.textContent = "No se pudo enviar. Inténtalo de nuevo o escribe a luciaesgrima@gmail.com.";
       });
     });
   }
