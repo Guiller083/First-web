@@ -680,6 +680,82 @@ h3 {
   font-size: 0.9rem;
 }
 
+/* ===== Newsletter modal ===== */
+.modal {
+  border: 0;
+  padding: 0;
+  width: min(92vw, 30rem);
+  max-height: 90vh;
+  border-radius: 4px;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.modal-card {
+  position: relative;
+  padding: 2rem 1.75rem 1.5rem;
+}
+
+.modal-card h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-taupe-dark);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.9rem;
+  border: 0;
+  background: transparent;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-muted);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: var(--color-text);
+}
+
+#nl-captcha {
+  max-width: 6rem;
+}
+
+.modal-note {
+  margin: 1rem 0 0;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* ===== Página de privacidad ===== */
+.privacy-page {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 3rem var(--space) 4rem;
+}
+
+.privacy-page h1 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.privacy-page h2 {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: var(--color-taupe-dark);
+}
+
+.privacy-page p,
+.privacy-page ul {
+  margin: 0.6rem 0;
+}
+
 /* ===== Tablet and up ===== */
 @media (min-width: 768px) {
   .nav-toggle {
