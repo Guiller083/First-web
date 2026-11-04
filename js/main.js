@@ -54,7 +54,7 @@
   // Newsletter modal: abrir/cerrar, captcha de suma y envío a Brevo.
   // El endpoint real va en el `action` del formulario (ver comentario en index.html);
   // mientras sea el placeholder PENDIENTE-ENDPOINT-BREVO se muestra un aviso.
-  var nlOpen = document.getElementById("newsletter-open");
+  var nlOpen = document.querySelectorAll("[data-newsletter-open]");
   var nlModal = document.getElementById("newsletter-modal");
   var nlForm = document.getElementById("newsletter-form");
   var nlStatus = document.getElementById("nl-status");
@@ -79,13 +79,15 @@
   if (nlOpen && nlModal && nlForm && nlStatus) {
     newCaptcha();
 
-    nlOpen.addEventListener("click", function () {
-      newCaptcha();
-      nlStatus.textContent = "";
-      nlModal.showModal();
-      if (nlEmail) {
-        nlEmail.focus();
-      }
+    nlOpen.forEach(function (button) {
+      button.addEventListener("click", function () {
+        newCaptcha();
+        nlStatus.textContent = "";
+        nlModal.showModal();
+        if (nlEmail) {
+          nlEmail.focus();
+        }
+      });
     });
 
     var nlClose = nlModal.querySelector(".modal-close");
