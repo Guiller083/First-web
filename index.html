@@ -419,6 +419,7 @@
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#mentoring">Mentorías</a></li>
         <li><a href="mailto:luciaesgrima@gmail.com">luciaesgrima@gmail.com</a></li>
+        <li><a href="privacidad.html">Política de privacidad</a></li>
       </ul>
       <ul class="social-links" aria-label="Redes sociales y patrocinadores">
         <li><a href="https://www.instagram.com/luciamartinpb/" rel="noopener" aria-label="Instagram de Lucía"><img class="social-icon" src="assets/img/instagram-logo.png" alt="Instagram" width="2048" height="2048"></a></li>
@@ -434,9 +435,45 @@
       <p>Sigue la temporada de Lucía y escríbele para mentorías, prensa o patrocinios.</p>
       <a class="button button-light" href="#mentoring">Contactar</a>
       <p class="newsletter-note">Suscríbete a la newsletter para no perderte las próximas competiciones, los vídeos en directo y los resultados.</p>
-      <button class="button button-light" type="button" disabled>Suscribirme</button>
+      <button class="button button-light" type="button" id="newsletter-open">Suscribirme</button>
     </div>
   </footer>
+
+  <!-- Newsletter: modal con formulario de suscripción gestionado por Brevo.
+       PENDIENTE: sustituir el action por la URL real del formulario de Brevo
+       (Brevo → Marketing → Formularios → código de inserción → URL del <form>).
+       Mientras tanto, js/main.js detecta el placeholder y muestra un aviso. -->
+  <dialog id="newsletter-modal" class="modal" aria-labelledby="nl-title">
+    <div class="modal-card">
+      <button class="modal-close" type="button" aria-label="Cerrar">×</button>
+      <h2 id="nl-title">Únete a nuestra newsletter</h2>
+      <p>Recibe novedades, contenidos, recomendaciones e información de interés. Ocasionalmente también compartiremos promociones de productos y servicios propios y de otras marcas.</p>
+      <form class="contact-form" id="newsletter-form" action="PENDIENTE-ENDPOINT-BREVO" method="POST">
+        <div class="form-row">
+          <label for="nl-email">Correo electrónico</label>
+          <input id="nl-email" name="EMAIL" type="email" autocomplete="email" required>
+        </div>
+        <div class="form-row">
+          <label for="nl-captcha">Comprobación: ¿cuánto es <span id="nl-captcha-q">…</span>?</label>
+          <input id="nl-captcha" name="captcha" type="text" inputmode="numeric" autocomplete="off" required>
+        </div>
+        <!-- Honeypot anti-spam: oculto para usuarios, lo rellenan los bots -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="nl-gotcha">No rellenar</label>
+          <input id="nl-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="form-row form-row-full checkbox-row">
+          <input id="nl-consent" name="consent" type="checkbox" required>
+          <label for="nl-consent">He leído y acepto recibir por correo electrónico la newsletter de Lucía Martín-Portugués, que podrá incluir contenidos editoriales, novedades, recomendaciones e información comercial y promociones sobre productos y servicios propios y de terceros. Entiendo que los envíos serán esporádicos y que puedo darme de baja en cualquier momento. He leído la <a href="privacidad.html">Política de privacidad</a>.</label>
+        </div>
+        <div class="form-row form-row-full">
+          <button class="button" type="submit" aria-describedby="nl-status">Suscribirme gratis</button>
+          <p id="nl-status" class="form-status" role="status"></p>
+        </div>
+      </form>
+      <p class="modal-note">La suscripción es gratuita y puedes darte de baja cuando quieras mediante el enlace incluido en cada correo.</p>
+    </div>
+  </dialog>
 
   <script src="js/main.js" defer></script>
 </body>

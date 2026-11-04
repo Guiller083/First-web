@@ -51,6 +51,101 @@
     });
   }
 
+  // Newsletter modal: abrir/cerrar, captcha de suma y envío a Brevo.
+  // El endpoint real va en el `action` del formulario (ver comentario en index.html);
+  // mientras sea el placeholder PENDIENTE-ENDPOINT-BREVO se muestra un aviso.
+  var nlOpen = document.getElementById("newsletter-open");
+  var nlModal = document.getElementById("newsletter-modal");
+  var nlForm = document.getElementById("newsletter-form");
+  var nlStatus = document.getElementById("nl-status");
+  var nlEmail = document.getElementById("nl-email");
+  var nlCaptcha = document.getElementById("nl-captcha");
+  var nlCaptchaQ = document.getElementById("nl-captcha-q");
+  var nlGotcha = document.getElementById("nl-gotcha");
+  var nlAnswer = 0;
+
+  function newCaptcha() {
+    var a = 1 + Math.floor(Math.random() * 10);
+    var b = 1 + Math.floor(Math.random() * 10);
+    nlAnswer = a + b;
+    if (nlCaptchaQ) {
+      nlCaptchaQ.textContent = a + " + " + b;
+    }
+    if (nlCaptcha) {
+      nlCaptcha.value = "";
+    }
+  }
+
+  if (nlOpen && nlModal && nlForm && nlStatus) {
+    newCaptcha();
+
+    nlOpen.addEventListener("click", function () {
+      newCaptcha();
+      nlStatus.textContent = "";
+      nlModal.showModal();
+      if (nlEmail) {
+        nlEmail.focus();
+      }
+    });
+
+    var nlClose = nlModal.querySelector(".modal-close");
+    if (nlClose) {
+      nlClose.addEventListener("click", function () {
+        nlModal.close();
+      });
+    }
+
+    // Clic en el backdrop (fuera de la tarjeta) cierra el modal
+    nlModal.addEventListener("click", function (event) {
+      if (event.target === nlModal) {
+        nlModal.close();
+      }
+    });
+
+    nlForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!nlForm.reportValidity()) {
+        return;
+      }
+
+      // Bots que rellenan el honeypot: éxito falso sin enviar nada
+      if (nlGotcha && nlGotcha.value !== "") {
+        nlStatus.textContent = "¡Ya estás dentro! Recibirás la newsletter cuando publiquemos nuevos contenidos o novedades.";
+        nlForm.reset();
+        return;
+      }
+
+      if (parseInt(nlCaptcha.value, 10) !== nlAnswer) {
+        nlStatus.textContent = "La suma no es correcta. Inténtalo de nuevo.";
+        newCaptcha();
+        nlCaptcha.focus();
+        return;
+      }
+
+      if (nlForm.getAttribute("action").indexOf("PENDIENTE") === 0) {
+        nlStatus.textContent = "La suscripción se activará muy pronto. Gracias por tu interés.";
+        return;
+      }
+
+      nlStatus.textContent = "Enviando…";
+      fetch(nlForm.action, {
+        method: "POST",
+        body: new FormData(nlForm),
+        headers: { "Accept": "application/json" }
+      }).then(function (response) {
+        if (response.ok) {
+          nlStatus.textContent = "¡Ya estás dentro! Recibirás la newsletter cuando publiquemos nuevos contenidos o novedades. ¡Gracias por acompañarnos!";
+          nlForm.reset();
+          newCaptcha();
+        } else {
+          nlStatus.textContent = "No hemos podido completar tu suscripción. Comprueba que tu dirección de correo electrónico es correcta e inténtalo de nuevo. Si el problema continúa, escribe a luciaesgrima@gmail.com.";
+        }
+      }).catch(function () {
+        nlStatus.textContent = "No hemos podido completar tu suscripción. Comprueba que tu dirección de correo electrónico es correcta e inténtalo de nuevo. Si el problema continúa, escribe a luciaesgrima@gmail.com.";
+      });
+    });
+  }
+
   // Keep footer year current
   var year = document.getElementById("year");
   if (year) {

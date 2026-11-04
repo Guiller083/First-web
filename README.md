@@ -42,6 +42,14 @@ The endpoint is already configured: `https://formspree.io/f/myeebnjr` (in the fo
 
 To point it at a different form later, create the form in Formspree and replace the `action` URL. The form includes a `_gotcha` honeypot field for spam and works without JS via a normal POST.
 
+## Newsletter (Brevo)
+
+El botón **Suscribirme** del footer abre un modal con el formulario de suscripción gestionado por **Brevo** (lista `Newsletter web`).
+
+Pendiente de activar: en `index.html`, sustituir `action="PENDIENTE-ENDPOINT-BREVO"` del `<form id="newsletter-form">` por la URL real del formulario de Brevo (*Marketing → Formularios → código de inserción*). Mientras sea el placeholder, el sitio muestra «La suscripción se activará muy pronto» y no envía nada.
+
+Anti-spam: suma matemática aleatoria en el modal + honeypot `_gotcha`. Consentimiento versionado en [docs/NEWSLETTER_V1.md](docs/NEWSLETTER_V1.md); política en [privacidad.html](privacidad.html).
+
 ## Architecture
 
 Formulario, dominio, DNS y flujo de datos: [docs/architecture.md](docs/architecture.md).
