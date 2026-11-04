@@ -165,7 +165,7 @@ h3 {
   font-size: 0.75rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .nav-subscribe {
     margin-top: 0.5rem;
   }
@@ -774,23 +774,8 @@ h3 {
 
 /* ===== Tablet and up ===== */
 @media (min-width: 768px) {
-  .nav-toggle {
-    display: none;
-  }
-
   .header-inner {
     padding: 0 2rem;
-  }
-
-  .site-nav {
-    display: block;
-    width: auto;
-  }
-
-  .site-nav ul {
-    display: flex;
-    gap: 1.75rem;
-    padding: 0;
   }
 
   .tiles-band {
@@ -868,6 +853,23 @@ h3 {
 
   .fencing-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: block;
+    width: auto;
+  }
+
+  .site-nav ul {
+    display: flex;
+    gap: 1.75rem;
+    padding: 0;
   }
 }
 

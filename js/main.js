@@ -81,6 +81,9 @@
 
     nlOpen.forEach(function (button) {
       button.addEventListener("click", function () {
+        if (nav && nav.classList.contains("is-open")) {
+          setNav(false);
+        }
         newCaptcha();
         nlStatus.textContent = "";
         nlModal.showModal();
