@@ -458,12 +458,14 @@
           <input id="nl-captcha" name="captcha" type="text" inputmode="numeric" autocomplete="off" required>
         </div>
         <!-- Honeypot anti-spam: oculto para usuarios, lo rellenan los bots -->
+        <input type="hidden" name="locale" value="es">
         <div class="hp-field" aria-hidden="true">
           <label for="nl-gotcha">No rellenar</label>
           <input id="nl-gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+          <input name="email_address_check" type="text" tabindex="-1" autocomplete="off">
         </div>
         <div class="form-row form-row-full checkbox-row">
-          <input id="nl-consent" name="consent" type="checkbox" required>
+          <input id="nl-consent" name="OPT_IN" type="checkbox" value="1" required>
           <label for="nl-consent">He leído y acepto recibir por correo electrónico la newsletter de Lucía Martín-Portugués, que podrá incluir contenidos editoriales, novedades, recomendaciones e información comercial y promociones sobre productos y servicios propios y de terceros. Entiendo que los envíos serán esporádicos y que puedo darme de baja en cualquier momento. He leído la <a href="privacidad.html">Política de privacidad</a>.</label>
         </div>
         <div class="form-row form-row-full">
