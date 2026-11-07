@@ -85,6 +85,7 @@
         }
         newCaptcha();
         nlStatus.textContent = "";
+        nlStatus.classList.remove("is-success");
         nlModal.showModal();
         if (nlEmail) {
           nlEmail.focus();
@@ -114,7 +115,8 @@
 
       // Bots que rellenan el honeypot: éxito falso sin enviar nada
       if (nlGotcha && nlGotcha.value !== "") {
-        nlStatus.textContent = "¡Ya estás dentro! Recibirás la newsletter cuando publiquemos nuevos contenidos o novedades.";
+        nlStatus.classList.add("is-success");
+        nlStatus.textContent = "¡Casi listo! Te hemos enviado un correo de confirmación: abre el email y haz clic en «Sí, suscribirme a esta lista» para completar tu alta. Si no lo ves, revisa la carpeta de spam.";
         nlForm.reset();
         return;
       }
@@ -134,7 +136,8 @@
         body: new FormData(nlForm),
         mode: "no-cors"
       }).then(function () {
-        nlStatus.textContent = "¡Ya estás dentro! Recibirás la newsletter cuando publiquemos nuevos contenidos o novedades. ¡Gracias por acompañarnos!";
+        nlStatus.classList.add("is-success");
+        nlStatus.textContent = "¡Casi listo! Te hemos enviado un correo de confirmación: abre el email y haz clic en «Sí, suscribirme a esta lista» para completar tu alta. Si no lo ves, revisa la carpeta de spam.";
         nlForm.reset();
         newCaptcha();
       }).catch(function () {
