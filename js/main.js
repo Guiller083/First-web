@@ -52,8 +52,7 @@
   }
 
   // Newsletter modal: abrir/cerrar, captcha de suma y envío a Brevo.
-  // El endpoint real va en el `action` del formulario (ver comentario en index.html);
-  // mientras sea el placeholder PENDIENTE-ENDPOINT-BREVO se muestra un aviso.
+  // El endpoint público del formulario va en el `action` del formulario.
   var nlOpen = document.querySelectorAll("[data-newsletter-open]");
   var nlModal = document.getElementById("newsletter-modal");
   var nlForm = document.getElementById("newsletter-form");
@@ -127,24 +126,17 @@
         return;
       }
 
-      if (nlForm.getAttribute("action").indexOf("PENDIENTE") === 0) {
-        nlStatus.textContent = "La suscripción se activará muy pronto. Gracias por tu interés.";
-        return;
-      }
-
       nlStatus.textContent = "Enviando…";
+      // El endpoint de Brevo (sibforms) no devuelve cabeceras CORS, así que
+      // la respuesta llega opaca: se asume éxito si el envío no falla en red.
       fetch(nlForm.action, {
         method: "POST",
         body: new FormData(nlForm),
-        headers: { "Accept": "application/json" }
-      }).then(function (response) {
-        if (response.ok) {
-          nlStatus.textContent = "¡Ya estás dentro! Recibirás la newsletter cuando publiquemos nuevos contenidos o novedades. ¡Gracias por acompañarnos!";
-          nlForm.reset();
-          newCaptcha();
-        } else {
-          nlStatus.textContent = "No hemos podido completar tu suscripción. Comprueba que tu dirección de correo electrónico es correcta e inténtalo de nuevo. Si el problema continúa, escribe a luciaesgrima@gmail.com.";
-        }
+        mode: "no-cors"
+      }).then(function () {
+        nlStatus.textContent = "¡Ya estás dentro! Recibirás la newsletter cuando publiquemos nuevos contenidos o novedades. ¡Gracias por acompañarnos!";
+        nlForm.reset();
+        newCaptcha();
       }).catch(function () {
         nlStatus.textContent = "No hemos podido completar tu suscripción. Comprueba que tu dirección de correo electrónico es correcta e inténtalo de nuevo. Si el problema continúa, escribe a luciaesgrima@gmail.com.";
       });

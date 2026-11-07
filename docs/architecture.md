@@ -12,11 +12,11 @@ Sitio estático sin build ni backend propio: HTML + CSS + JS servidos por GitHub
 
 ## Newsletter (Brevo)
 
-- **Ubicación:** botón «Suscribirme» del footer (`.footer-panel`) abre el modal `#newsletter-modal` (`index.html`), un `<dialog>` nativo.
+- **Ubicación:** los botones «Suscribirme» del header (`.nav-subscribe`, junto a la marca) y del footer (`.footer-panel`) abren el modal `#newsletter-modal` (`index.html`), un `<dialog>` nativo; ambos llevan el atributo `data-newsletter-open`.
 - **Gestión:** Brevo gestiona la lista `Newsletter web`, las altas, las bajas (enlace en cada correo) y las campañas. **No se guardan claves API en el repo**: la suscripción usa la URL pública del formulario de Brevo.
-- **Endpoint:** `action` del `<form id="newsletter-form">`. Mientras no exista la cuenta de Brevo queda el placeholder `PENDIENTE-ENDPOINT-BREVO`, que `js/main.js` detecta para mostrar un aviso en vez de enviar. Para activarlo: Brevo → *Marketing → Formularios* → código de inserción → copiar la URL del `<form>` generado.
+- **Endpoint:** `action` del `<form id="newsletter-form">` apunta a la URL pública del formulario de Brevo (`d9a076fe.sibforms.com/serve/…`), tomada del código de inserción (*Marketing → Formularios* → URL del `<form>`).
 - **Campos:** `EMAIL`, `captcha` (suma matemática aleatoria 1–10 generada en `js/main.js`), `consent` (checkbox obligatorio y desmarcado; texto versionado en `docs/NEWSLETTER_V1.md`), `_gotcha` (honeypot oculto).
-- **Flujo de envío:** `js/main.js` abre/cierra el modal (botón, ×, backdrop, Escape nativo del `<dialog>`), genera la suma al cargar y al abrir, valida con `reportValidity()`, descarta bots que rellenen el honeypot, comprueba la suma y hace `fetch` con `Accept: application/json`. Sin JS el modal no se abre (el botón queda inerte).
+- **Flujo de envío:** `js/main.js` abre/cierra el modal (botón, ×, backdrop, Escape nativo del `<dialog>`), genera la suma al cargar y al abrir, valida con `reportValidity()`, descarta bots que rellenen el honeypot, comprueba la suma y hace `fetch` con `mode: "no-cors"` (sibforms no devuelve cabeceras CORS, así que se asume éxito al completarse la petición). Sin JS el modal no se abre (el botón queda inerte).
 - **Privacidad:** `privacidad.html` (responsable, finalidades, base jurídica, proveedores, conservación, derechos) enlazada desde el consentimiento del modal y desde el footer.
 
 ## Dominio y despliegue
