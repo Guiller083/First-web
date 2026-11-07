@@ -440,16 +440,15 @@
     </div>
   </footer>
 
-  <!-- Newsletter: modal con formulario de suscripción gestionado por Brevo.
-       PENDIENTE: sustituir el action por la URL real del formulario de Brevo
-       (Brevo → Marketing → Formularios → código de inserción → URL del <form>).
-       Mientras tanto, js/main.js detecta el placeholder y muestra un aviso. -->
+  <!-- Newsletter: modal con formulario de suscripción gestionado por Brevo
+       (lista «Newsletter web»; el action es la URL pública del <form> del
+       código de inserción de Brevo). -->
   <dialog id="newsletter-modal" class="modal" aria-labelledby="nl-title">
     <div class="modal-card">
       <button class="modal-close" type="button" aria-label="Cerrar">×</button>
       <h2 id="nl-title">Únete a nuestra newsletter</h2>
       <p>Suscríbete a la newsletter para no perderte las próximas competiciones, los vídeos en directo y los resultados.</p>
-      <form class="contact-form" id="newsletter-form" action="PENDIENTE-ENDPOINT-BREVO" method="POST">
+      <form class="contact-form" id="newsletter-form" action="https://d9a076fe.sibforms.com/serve/MUIFAKqa0QFvWUxy69YjHvD6kP_hsN-ix8ZwbCm0zwjrvRDUJvzUr85Vium-uA4Xs1AuuinKK-2ffvH_hINwHVlVvOLjSftEK09Ix-_vRrebtzh-IievGgBJefm_IGP7joY-9FzBONqdwTOmNDgG3Jdf5pCWBsb8x13cepfD3VAKPQJHk3JlhmqhA3ixcZb6uIf1F24TGxu24uaJzg==" method="POST">
         <div class="form-row">
           <label for="nl-email">Correo electrónico</label>
           <input id="nl-email" name="EMAIL" type="email" autocomplete="email" required>

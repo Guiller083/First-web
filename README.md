@@ -46,7 +46,7 @@ To point it at a different form later, create the form in Formspree and replace 
 
 El botón **Suscribirme** del footer abre un modal con el formulario de suscripción gestionado por **Brevo** (lista `Newsletter web`).
 
-Pendiente de activar: en `index.html`, sustituir `action="PENDIENTE-ENDPOINT-BREVO"` del `<form id="newsletter-form">` por la URL real del formulario de Brevo (*Marketing → Formularios → código de inserción*). Mientras sea el placeholder, el sitio muestra «La suscripción se activará muy pronto» y no envía nada.
+El `action` del `<form id="newsletter-form">` es la URL pública del formulario de Brevo (`*.sibforms.com/serve/…`). El envío se hace vía `fetch` con `mode: "no-cors"` (sibforms no devuelve cabeceras CORS), por lo que el sitio muestra éxito al completarse la petición. Sin JavaScript, el formulario hace submit nativo a la página de éxito de Brevo.
 
 Anti-spam: suma matemática aleatoria en el modal + honeypot `_gotcha`. Consentimiento versionado en [docs/NEWSLETTER_V1.md](docs/NEWSLETTER_V1.md); política en [privacidad.html](privacidad.html).
 
