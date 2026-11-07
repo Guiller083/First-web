@@ -575,6 +575,16 @@ h3 {
   color: var(--color-muted);
 }
 
+.form-status.is-success {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-taupe-dark);
+  background: var(--color-bg-soft);
+  border-radius: 4px;
+}
+
 /* ===== Footer ===== */
 .site-footer {
   display: grid;
