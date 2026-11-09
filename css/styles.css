@@ -99,6 +99,8 @@ h3 {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  column-gap: 1.25rem;
+  row-gap: 0.5rem;
   min-height: var(--header-height);
   padding: 0 var(--space);
 }
@@ -160,11 +162,10 @@ h3 {
   opacity: 0.75;
 }
 
+/* El envoltorio se disuelve para que el botón y el texto participen
+   directamente en el espaciado uniforme del header. */
 .header-subscribe {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  margin-right: auto;
+  display: contents;
 }
 
 .nav-subscribe {
@@ -174,6 +175,9 @@ h3 {
 
 .nav-subscribe-note {
   display: none;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 29rem;
   font-size: 0.85rem;
   line-height: 1.3;
   color: rgba(255, 255, 255, 0.85);
@@ -184,7 +188,6 @@ h3 {
 @media (min-width: 1280px) and (max-width: 1439px) {
   .nav-subscribe-note {
     display: block;
-    max-width: 13rem;
     font-size: 0.72rem;
     white-space: normal;
   }
