@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lucía Martín-Portugués | Esgrimista de sable</title>
   <meta name="description" content="Web oficial de la esgrimista española de sable Lucía Martín-Portugués: biografía, palmarés, próximas competiciones y mentorías para deportistas y empresas.">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
@@ -17,7 +21,10 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="#top" aria-label="Lucía Martín-Portugués, inicio">LM-P</a>
-      <button class="button button-light nav-subscribe" type="button" data-newsletter-open>Suscribirme</button>
+      <div class="header-subscribe">
+        <button class="button button-light nav-subscribe" type="button" data-newsletter-open>SUSCRIBIRME</button>
+        <span class="nav-subscribe-note">Suscríbete a la newsletter para no perderte ninguna competición</span>
+      </div>
       <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -424,7 +431,9 @@
       </ul>
       <ul class="social-links" aria-label="Redes sociales y patrocinadores">
         <li><a href="https://www.instagram.com/luciamartinpb/" rel="noopener" aria-label="Instagram de Lucía"><img class="social-icon" src="assets/img/instagram-logo.png" alt="Instagram" width="2048" height="2048"></a></li>
-        <li><img class="sponsor-icon" src="assets/img/iberdrola-logo.png" alt="Iberdrola, patrocinador" width="600" height="600"></li>
+        <!-- TEMPORAL: logo de Iberdrola oculto a petición del usuario.
+           Para reactivarlo, descomentar la línea inferior. -->
+      <!-- <li><img class="sponsor-icon" src="assets/img/iberdrola-logo.png" alt="Iberdrola, patrocinador" width="600" height="600"></li> -->
       </ul>
       <p class="credits">
         Fotos: <a href="https://www.instagram.com/luciamartinpb/" rel="noopener">@luciamartinpb</a> en Instagram.
@@ -435,7 +444,7 @@
       <h2>Mantente en contacto</h2>
       <p>Sigue la temporada de Lucía y escríbele para mentorías, prensa o patrocinios.</p>
       <a class="button button-light" href="#mentoring">Contactar</a>
-      <p class="newsletter-note">Suscríbete a la newsletter para no perderte las próximas competiciones, los vídeos en directo y los resultados.</p>
+      <p class="newsletter-note">Suscríbete a la newsletter para no perderte ninguna competición</p>
       <button class="button button-light" type="button" data-newsletter-open>Suscribirme</button>
     </div>
   </footer>
