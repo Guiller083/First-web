@@ -160,10 +160,31 @@ h3 {
   opacity: 0.75;
 }
 
+.header-subscribe {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-left: auto;
+}
+
 .nav-subscribe {
-  margin: 0 auto 0 1rem;
   padding: 0.5rem 1.1rem;
   font-size: 0.75rem;
+}
+
+.nav-subscribe-note {
+  display: none;
+  max-width: 11rem;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: right;
+}
+
+@media (min-width: 1280px) {
+  .nav-subscribe-note {
+    display: block;
+  }
 }
 
 /* ===== Shared UI ===== */
