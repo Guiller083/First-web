@@ -209,6 +209,21 @@ h3 {
   }
 }
 
+/* En el menú móvil la nota de la newsletter se muestra bajo las pestañas. */
+.nav-newsletter-note {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .nav-newsletter-note {
+    display: block;
+    padding: 0.6rem 0 0.9rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
 /* ===== Shared UI ===== */
 .eyebrow {
   margin: 0 0 0.75rem;
