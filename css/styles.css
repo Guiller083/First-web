@@ -162,10 +162,20 @@ h3 {
   opacity: 0.75;
 }
 
-/* El envoltorio se disuelve para que el botón y el texto participen
+/* En móvil el botón queda junto a la marca; en escritorio (≥1024 px) el
+   envoltorio se disuelve para que el botón y el texto participen
    directamente en el espaciado uniforme del header. */
 .header-subscribe {
-  display: contents;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .header-subscribe {
+    display: contents;
+  }
 }
 
 .nav-subscribe {
